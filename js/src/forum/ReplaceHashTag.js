@@ -2,7 +2,7 @@ import app from 'flarum/forum/app';
 
 export default function () {
 
-  const regex = /(^|\s)#(\p{L}+)/gu;
+  const regex = /#[^\s!@#$%^&*()=+.\/,\[{\]};:'"?><]+/gu;
   const p = this.$('p');
   const discussionsUrl = app.route('index');
   const tooltip = app.translator.trans('justoverclock-hashtag.forum.post.hashtag_link_tooltip');
