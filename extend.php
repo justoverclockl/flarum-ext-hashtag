@@ -30,7 +30,7 @@ return [
     (new Extend\Event())
         ->listen(SettingsSaving::class, function (SettingsSaving $event) {
             foreach ($event->settings as $key => $setting) {
-                if ($key === 'justoverclock-hashtag.regex') {
+                if ($key === 'justoverclock-hashtag.regex' || $key === 'default_route') {
                     resolve('flarum.formatter')->flush();
 
                     return;
