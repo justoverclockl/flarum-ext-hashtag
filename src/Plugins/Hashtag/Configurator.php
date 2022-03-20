@@ -12,6 +12,13 @@ class Configurator extends ConfiguratorBase
 
     protected function setUp()
     {
+        $customRegex = resolve('flarum.settings')->get('justoverclock-hashtag.regex');
+        $isRegexValid = is_int(@preg_match($customRegex, ''));
+
+        if ($customRegex && $isRegexValid) {
+            $this->regexp = $customRegex;
+        }
+
         $forumUrl = resolve(UrlGenerator::class)->to('forum');
 
         $indexRoute = $forumUrl->route('index');
