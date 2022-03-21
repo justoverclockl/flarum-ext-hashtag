@@ -7,7 +7,7 @@ use s9e\TextFormatter\Plugins\ConfiguratorBase;
 
 class Configurator extends ConfiguratorBase
 {
-    protected $regexp = '/\B#(\w+)(?!#)\b/';
+    protected $regexp = '/\B#([\p{L}\p{N}_]+)(?!#)\b/u';
     protected $tagName = 'HASHTAG';
 
     protected function setUp()
