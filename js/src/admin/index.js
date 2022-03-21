@@ -8,7 +8,7 @@ app.initializers.add('justoverclock-hashtag', () => {
     name: 'justoverclock-hashtag.regex',
     type: 'text',
     label: app.translator.trans('justoverclock-hashtag.admin.settings.regexlabel'),
-    placeholder: String.raw`/\B#(\w+)(?!#)\b/`,
+    placeholder: String.raw`/\B#([\p{L}\p{N}_]+)(?!#)\b/u`,
     help: (
       <p>
         {app.translator.trans('justoverclock-hashtag.admin.settings.regexdesc')}
